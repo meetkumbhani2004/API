@@ -15,7 +15,7 @@ app.use(session({
 }));
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/loginApp')
+mongoose.connect('mongodb+srv://madapreyeyeu5150_db_user:NxwFpZTo3kKriWmf@cluster0.gftqqjt.mongodb.net/')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
