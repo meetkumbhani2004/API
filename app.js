@@ -15,7 +15,7 @@ app.use(session({
 }));
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://madapreyeyeu5150_db_user:NxwFpZTo3kKriWmf@cluster0.gftqqjt.mongodb.net/')
+mongoose.connect('mongodb+srv://madapreyeyeu5150_db_user:dr8hF0xfeBt1SwJl@cluster0api.yxhap3k.mongodb.net/')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
