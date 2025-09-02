@@ -70,3 +70,13 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+// ✅ Get All Users (excluding passwords)
+router.get('/getallusers', async (req, res) => {
+  try {
+    const users = await User.find({}, '-password'); // exclude password field
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: 'Server error', error: err.message });
+  }
+});
