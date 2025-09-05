@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
-const authRoutes = require('./routes/auth');
+const authRouter = require('./routes/auth');
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(session({
 }));
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://madapreyeyeu5150_db_user:dr8hF0xfeBt1SwJl@cluster0api.yxhap3k.mongodb.net/myDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://madapreyeyeu5150_db_user:6A9ahlrczJORG3Ev@cluster0.1zc6ayv.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -30,7 +30,7 @@ mongoose.connect('mongodb+srv://madapreyeyeu5150_db_user:dr8hF0xfeBt1SwJl@cluste
 .catch(err => console.error('❌ MongoDB connection error:', err.message));
 
 // Routes
-app.use('/api', authRoutes);
+app.use('/auth', authRouter);
 
 // Start Server
 const PORT = 3000;
