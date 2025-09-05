@@ -1,11 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const cors = require('cors')
 const authRouter = require('./routes/auth');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 const app = express();
+
+
+app.use(cors());
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
