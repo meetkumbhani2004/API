@@ -16,6 +16,7 @@
     "express-session": "^1.18.2",
     "mongoose": "^8.18.0",
     "nodemailer": "^7.0.6",
-    "serverless-http": "^3.0.0"
+    "serverless-http": "^3.0.0",
+    "swagger-ui-express": "^5.0.1"
   }
 }

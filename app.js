@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const authRouter = require('./routes/auth');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const app = express();
 
@@ -31,9 +33,18 @@ mongoose.connect('mongodb+srv://madapreyeyeu5150_db_user:6A9ahlrczJORG3Ev@cluste
 
 // Routes
 app.use('/auth', authRouter);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Start Server
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the API');
+});
+
+app.get('/api-docs', (req, res) => {
+  res.redirect('https://api-mkcy.onrender.com/api-docs');
 });
